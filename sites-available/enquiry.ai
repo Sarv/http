@@ -3,6 +3,7 @@ server {
     server_name enquiry.ai;
 
     location / {
+    	resolver 127.0.0.11 valid=5s;
         proxy_pass http://enquiry_http:80;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
